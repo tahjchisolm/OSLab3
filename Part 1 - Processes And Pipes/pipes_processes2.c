@@ -27,6 +27,7 @@ int main(int argc, char **argv)
 
   if (pid == 0)
     {
+      
       // child gets here and handles "grep Villanova"
 
       // replace standard input with input part of pipe
@@ -56,5 +57,6 @@ int main(int argc, char **argv)
       // execute cat
 
       execvp("cat", cat_args);
+      wait();
     }
 }
